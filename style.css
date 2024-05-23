@@ -1,0 +1,112 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-purple-color: #5c48f1;
+  --elements-background-color: #eeecfd;
+  --element-border-color: #e0e0e1;
+}
+
+.container {
+  margin-top: 100px;
+  width: 80%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "head head head head head head head head head head head head"
+    "one one one two two two three three three four four four "
+    "five five five six six six seven seven seven eight eight eight";
+  gap: 10px;
+  box-shadow: 0px 1px 3px black;
+  padding: 10px;
+  position: relative;
+}
+
+.container::before {
+  position: absolute;
+  display: block;
+  top: -109px;
+  left: 459px;
+  width: 50px;
+  height: 50px;
+  content: url(/img/person-blue-shirt.png);
+}
+
+.container div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: var(--elements-background-color);
+  border: 1px solid var(--element-border-color);
+  position: relative;
+  border-radius: 10px;
+}
+
+.container div input {
+  display: block;
+  align-self: flex-start;
+  padding: 10px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.container div:has(input[type="checkbox"]:checked) {
+  background-color: lightblue;
+}
+.container div label img {
+  display: block;
+  width: 100px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.container h1 {
+  grid-area: head;
+  text-align: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--main-purple-color);
+  background-color: var(--elements-background-color);
+  border: 1px solid var(--element-border-color);
+}
+
+.one {
+  grid-area: one;
+}
+
+.two {
+  grid-area: two;
+}
+
+.three {
+  grid-area: three;
+}
+
+.four {
+  grid-area: four;
+}
+
+.five {
+  grid-area: five;
+}
+
+.six {
+  grid-area: six;
+}
+
+.seven {
+  grid-area: seven;
+}
+
+.eight {
+  grid-area: eight;
+}
